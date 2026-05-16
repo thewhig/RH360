@@ -1,4 +1,5 @@
 tools/
 gh_*.zip
+gh-auth-project*.log
 qa_pdf_pages/
 render_docx_check/
