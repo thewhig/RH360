@@ -9,7 +9,8 @@
 - Nombre del tablero Kanban: RH360
 - Repositorio creado: https://github.com/thewhig/RH360
 - Issues creadas: https://github.com/thewhig/RH360/issues
-- Estado del GitHub Project v2: pendiente de autorizar permisos `project` en GitHub CLI.
+- Tablero Kanban público: https://github.com/users/thewhig/projects/3
+- Estado del GitHub Project v2: configurado.
 
 ## Estados obligatorios
 
@@ -60,28 +61,31 @@
 - Como empleado, quiero consultar el histórico de mis solicitudes de excedencia, para conocer el estado y resultado de mis trámites.
 - Como responsable de Recursos Humanos, quiero consultar el histórico de trámites de un empleado, para revisar sus solicitudes anteriores.
 
-## Instrucciones para crear el tablero manualmente en GitHub
+## Configuración realizada en GitHub
 
-1. Acceder a GitHub con la cuenta que se utilizará para la entrega.
-2. Entrar en el perfil de usuario y seleccionar Projects.
-3. Crear un nuevo proyecto con nombre RH360.
-4. Seleccionar vista de tipo Board o Kanban.
-5. Configurar la visibilidad como pública, o garantizar permiso de lectura al profesor.
-6. Editar el campo Status para que contenga exactamente estos valores: Backlog del producto, Pendiente de desarrollo, En proceso de desarrollo, En fase de pruebas y estrés, Pendiente de despliegue, Finalizada / Histórico.
-7. Crear las historias indicadas en este documento y asignar cada una al estado correspondiente.
-8. Copiar la URL pública del proyecto y añadirla en la entrega del aula virtual.
+1. Proyecto GitHub configurado con nombre RH360.
+2. Visibilidad del proyecto configurada como pública.
+3. Proyecto vinculado al repositorio público RH360.
+4. Campo Status configurado con los seis estados solicitados.
+5. Historias de usuario añadidas como issues y asignadas al estado correspondiente.
 
-Nota: las historias ya están creadas como issues en el repositorio público RH360 y tienen etiquetas con los estados Kanban solicitados. Si se crea el Project v2 desde la interfaz de GitHub, se pueden añadir estas issues al proyecto sin volver a redactarlas.
+Distribución verificada:
 
-## Comandos orientativos con GitHub CLI
+- Backlog del producto: 4
+- Pendiente de desarrollo: 8
+- En proceso de desarrollo: 3
+- En fase de pruebas y estrés: 2
+- Pendiente de despliegue: 1
+- Finalizada / Histórico: 2
 
-Estos comandos requieren tener instalado GitHub CLI (`gh`) y haber iniciado sesión con una cuenta con permisos para crear repositorios y proyectos.
+## Comandos usados con GitHub CLI
+
+Estos comandos requieren tener instalado GitHub CLI (`gh`) y haber iniciado sesión con una cuenta con permisos para editar GitHub Projects.
 
 ```powershell
 .\tools\gh\bin\gh.exe auth login --hostname github.com --git-protocol https --web --scopes "project,repo,read:org"
-.\tools\gh\bin\gh.exe project create --owner thewhig --title "RH360"
+.\tools\gh\bin\gh.exe project edit 3 --owner thewhig --title RH360 --visibility PUBLIC
+.\tools\gh\bin\gh.exe project link 3 --owner thewhig --repo RH360
 ```
-
-Después de crear el proyecto, se deben configurar manualmente los estados del campo Status si la versión instalada de GitHub CLI no permite modificar opciones de campos de Projects v2 directamente.
 
 Referencia oficial consultable: https://docs.github.com/issues/planning-and-tracking-with-projects/automating-your-project/using-the-api-to-manage-projects

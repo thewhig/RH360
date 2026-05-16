@@ -10,10 +10,9 @@ Aplicación corporativa para la gestión de comunicaciones internas, diarios, ag
 
 ## Tablero Kanban
 
-Las historias de usuario se han creado como issues del repositorio y se han clasificado con etiquetas que representan los estados Kanban solicitados.
-
+- Tablero Kanban público: https://github.com/users/thewhig/projects/3
 - Repositorio: https://github.com/thewhig/RH360
 - Issues del proyecto: https://github.com/thewhig/RH360/issues
 - Historias y distribución Kanban: [RH360_historias_usuario_kanban.md](RH360_historias_usuario_kanban.md)
 
-La creación de GitHub Projects v2 queda pendiente de autorizar un token con permisos `project`.
+El tablero se ha configurado con los estados solicitados: Backlog del producto, Pendiente de desarrollo, En proceso de desarrollo, En fase de pruebas y estrés, Pendiente de despliegue y Finalizada / Histórico.
