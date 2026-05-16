@@ -7,6 +7,9 @@
 - Sistema: RRHH. Recursos Humanos
 - Subsistema: GPRH. Gestión de Personal
 - Nombre del tablero Kanban: RH360
+- Repositorio creado: https://github.com/thewhig/RH360
+- Issues creadas: https://github.com/thewhig/RH360/issues
+- Estado del GitHub Project v2: pendiente de autorizar permisos `project` en GitHub CLI.
 
 ## Estados obligatorios
 
@@ -68,14 +71,15 @@
 7. Crear las historias indicadas en este documento y asignar cada una al estado correspondiente.
 8. Copiar la URL pública del proyecto y añadirla en la entrega del aula virtual.
 
+Nota: las historias ya están creadas como issues en el repositorio público RH360 y tienen etiquetas con los estados Kanban solicitados. Si se crea el Project v2 desde la interfaz de GitHub, se pueden añadir estas issues al proyecto sin volver a redactarlas.
+
 ## Comandos orientativos con GitHub CLI
 
 Estos comandos requieren tener instalado GitHub CLI (`gh`) y haber iniciado sesión con una cuenta con permisos para crear repositorios y proyectos.
 
 ```powershell
-gh auth login
-gh repo create RH360 --public --description "Aplicación corporativa para la gestión de comunicaciones internas, diarios, agenda de empleados y trámites del empleado." --add-readme
-gh project create --owner "@me" --title "RH360"
+.\tools\gh\bin\gh.exe auth login --hostname github.com --git-protocol https --web --scopes "project,repo,read:org"
+.\tools\gh\bin\gh.exe project create --owner thewhig --title "RH360"
 ```
 
 Después de crear el proyecto, se deben configurar manualmente los estados del campo Status si la versión instalada de GitHub CLI no permite modificar opciones de campos de Projects v2 directamente.
